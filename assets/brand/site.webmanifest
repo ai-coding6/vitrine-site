@@ -1,0 +1,21 @@
+{
+  "name": "Vitrine",
+  "short_name": "Vitrine",
+  "description": "Vitrine — Reading Asian retail. Independent reports, briefings, and analysis on fashion, sport, and luxury retail across Indonesia and Asia.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0F3D2E",
+  "background_color": "#F5EFE0",
+  "icons": [
+    {
+      "src": "/assets/brand/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

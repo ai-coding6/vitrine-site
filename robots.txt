@@ -1,0 +1,13 @@
+# Vitrine — robots.txt
+#
+# The subscribe form posts to https://vitrineasia.substack.com/api/v1/free,
+# which is on Substack's domain — outside the scope of this policy file.
+#
+# AI-training opt-out (GPTBot, anthropic-ai, ClaudeBot, CCBot, etc.) is deferred
+# to the Vercel deploy step, where it will be served as response headers
+# alongside the rest of the security/policy headers — see PLACEHOLDERS.md.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://vitrineasia.com/sitemap.xml

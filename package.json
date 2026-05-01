@@ -1,0 +1,14 @@
+{
+  "name": "vitrine-site",
+  "version": "1.0.0",
+  "description": "Vitrine — Reading Asian retail. Static website source.",
+  "private": true,
+  "scripts": {
+    "dev": "serve . -l 8080 --no-port-switching"
+  },
+  "devDependencies": {
+    "png-to-ico": "^3.0.1",
+    "serve": "^14.2.4",
+    "sharp": "^0.34.5"
+  }
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About — Vitrine</title>
+  <meta name="description" content="Vitrine is an independent trade publication for fashion, sport, and luxury retail across Indonesia and Asia. Editorial principles, sourcing methodology, and the editor.">
+
+  <meta property="og:title" content="About — Vitrine">
+  <meta property="og:description" content="An independent trade publication for fashion, sport, and luxury retail across Indonesia and Asia. Editorial principles and sourcing methodology.">
+  <meta property="og:url" content="https://vitrineasia.com/about">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://vitrineasia.com/assets/brand/vitrine-wordmark-1024.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About — Vitrine">
+  <meta name="twitter:description" content="An independent trade publication for fashion, sport, and luxury retail across Indonesia and Asia.">
+  <meta name="twitter:image" content="https://vitrineasia.com/assets/brand/vitrine-wordmark-1024.png">
+
+  <link rel="canonical" href="https://vitrineasia.com/about">
+
+  <link rel="icon" type="image/x-icon" href="/assets/brand/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/favicon-180.png">
+  <link rel="manifest" href="/assets/brand/site.webmanifest">
+  <meta name="theme-color" content="#0F3D2E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/vitrine.css">
+
+  <style>
+    /* Page-specific: about-page section blocks */
+
+    /* Methodology */
+    .methodology__heading {
+      font-family: var(--display);
+      font-size: clamp(1.875rem, 3vw, 2.5rem);
+      font-weight: 400;
+      color: var(--emerald);
+      letter-spacing: var(--tracking-tight);
+      font-variation-settings: "opsz" 144;
+      margin-bottom: 24px;
+      max-width: 760px;
+    }
+
+    .methodology__body {
+      font-family: var(--body);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--charcoal);
+      max-width: 720px;
+    }
+
+    .tier-list {
+      font-family: var(--body);
+      font-style: italic;
+      font-size: 1.0625rem;
+      line-height: 1.85;
+      color: var(--charcoal);
+      max-width: 760px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(176, 138, 58, 0.4);
+    }
+
+    .tier-list__sep {
+      color: var(--brass);
+      font-style: normal;
+      margin: 0 8px;
+      user-select: none;
+    }
+
+    /* Editor block (two-column with portrait) */
+    .editor-block {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .editor-block__heading {
+      font-family: var(--display);
+      font-size: clamp(1.625rem, 3vw, 2.25rem);
+      font-weight: 400;
+      color: var(--emerald);
+      letter-spacing: var(--tracking-tight);
+      font-variation-settings: "opsz" 144;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+
+    .editor-block__bio {
+      font-family: var(--body);
+      font-style: italic;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: var(--charcoal);
+      max-width: 480px;
+    }
+
+    .editor-portrait {
+      aspect-ratio: 3 / 4;
+      position: relative;
+      background: var(--cream-warm);
+      overflow: hidden;
+    }
+
+    .editor-portrait::before {
+      content: '';
+      position: absolute;
+      top: 12px; left: 12px; right: 12px; bottom: 12px;
+      border: 1px solid var(--brass);
+      pointer-events: none;
+    }
+
+    .editor-portrait--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px;
+    }
+
+    .editor-portrait--placeholder span {
+      font-family: var(--body);
+      font-style: italic;
+      font-size: 0.9375rem;
+      color: var(--ink-soft);
+      position: relative;
+      z-index: 1;
+      max-width: 220px;
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      margin-bottom: 32px;
+      max-width: var(--measure);
+    }
+
+    .contact-list li {
+      font-family: var(--body);
+      font-style: italic;
+      font-size: 1.25rem;
+      line-height: 1.9;
+      color: var(--charcoal);
+    }
+
+    .contact-list a {
+      color: var(--emerald);
+      border-bottom: 1px solid var(--brass);
+      padding-bottom: 1px;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-list a:hover { border-bottom-color: var(--emerald); }
+
+    .contact__policies {
+      font-family: var(--body);
+      font-style: italic;
+      font-size: 0.9375rem;
+      color: var(--ink-soft);
+      margin-top: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .editor-block {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .editor-portrait { max-width: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Edition strip -->
+  <div class="edition-strip" aria-hidden="true">
+    <div class="edition-strip__inner">
+      <span>Edition I · May 2026</span>
+      <span>Independent · Sourced · Indonesian</span>
+      <span>Jakarta</span>
+    </div>
+  </div>
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container masthead__inner">
+      <a href="/" class="wordmark" aria-label="Vitrine — home">
+        <img src="/assets/brand/vitrine-wordmark.svg" alt="" class="wordmark__mark" width="30" height="30">
+        <span class="wordmark__text">Vitrine</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/reports">Reports</a>
+        <a href="/movements">Movements</a>
+        <a href="/insights">Insights</a>
+        <a href="/about" class="is-current">About</a>
+        <a href="/subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page header with in-page anchor nav -->
+  <section class="page-header">
+    <div class="container">
+      <p class="page-header__eyebrow">Independent · Sourced · Indonesian</p>
+      <h1 class="page-header__title">About</h1>
+      <p class="page-header__standfirst">
+        A trade publication for fashion, sport, luxury and lifestyle retail in Indonesia. Reference-grade analysis, reported from inside the market.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MISSION
+       ============================================ -->
+  <section class="section" id="mission">
+    <div class="container">
+      <p class="section__eyebrow">Mission</p>
+      <div class="about-teaser">
+        <p>
+          Vitrine reads the Indonesian retail market the way the industry itself reads it — through ownership, distribution, geography, and the structural facts that explain why luxury houses, multi-brand operators, and mall landlords behave the way they do. The reporting is grounded in publicly verifiable sources: regulatory filings, listed-company disclosures, primary government data, and the operational record of the houses and operators themselves. Future editions will progressively incorporate primary research, industry interviews, and proprietary survey work. The Year One ambition is to produce the most accurate publicly-grounded reading of the Indonesian luxury retail market that can be produced from public sources alone.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer__columns">
+      <div class="footer__col">
+        <h4>Vitrine</h4>
+        <p class="footer__brand-line">Reading Asian retail.</p>
+        <p>Fashion, sport, and luxury — Indonesia and Asia.</p>
+        <a href="mailto:info@vitrineasia.com">info@vitrineasia.com</a>
+        <a href="mailto:editor@vitrineasia.com">editor@vitrineasia.com</a>
+      </div>
+      <div class="footer__col">
+        <h4>Read</h4>
+        <a href="/reports">Reports</a>
+        <a href="/movements">Movements</a>
+        <a href="/insights">Insights</a>
+        <a href="/about">About</a>
+        <a href="/subscribe">The Briefing</a>
+      </div>
+      <div class="footer__col">
+        <h4>Follow</h4>
+        <a href="https://instagram.com/thevitrine.report" target="_blank" rel="noopener">Instagram — @thevitrine.report</a>
+        <a href="https://linkedin.com/company/vitrine" target="_blank" rel="noopener">LinkedIn — /company/vitrine</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Vitrine. All rights reserved.</span>
+      <span>Independent · Sourced · Indonesian</span>
+    </div>
+  </footer>
+
+</body>
+</html>
