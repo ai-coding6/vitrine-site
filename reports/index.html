@@ -103,6 +103,121 @@
       }
     }
   </style>
+
+  <!-- Vitrine — Analytics & cookie consent -->
+  <script>
+    (function() {
+      var STORAGE_KEY = 'vitrine-cookie-consent';
+      var GA_ID = 'G-P50LSGCPE5';
+
+      function loadGA4() {
+        if (window.gtagLoaded) return;
+        window.gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID, { anonymize_ip: true });
+      }
+
+      function injectStyles() {
+        if (document.getElementById('vitrine-cookie-banner-styles')) return;
+        var style = document.createElement('style');
+        style.id = 'vitrine-cookie-banner-styles';
+        style.textContent = [
+          "#vitrine-cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999; background: #F5EFE0; border-top: 2px solid #B08A3A; padding: 0.9rem 1.4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; box-shadow: 0 -4px 16px rgba(26, 26, 26, 0.06); font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; }",
+          "#vitrine-cookie-banner .vcb-text { flex: 1 1 320px; color: #2A2A2A; font-size: 0.78rem; line-height: 1.5; margin: 0; }",
+          "#vitrine-cookie-banner .vcb-text em { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 0.92rem; font-style: italic; color: #0F3D2E; margin-right: 0.3rem; }",
+          "#vitrine-cookie-banner .vcb-buttons { display: flex; gap: 0.5rem; flex-shrink: 0; }",
+          "#vitrine-cookie-banner button { font-family: inherit; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; padding: 0.6rem 1.1rem; border: 1px solid transparent; cursor: pointer; transition: all 0.2s; }",
+          "#vitrine-cookie-banner .vcb-accept { background: #0F3D2E; color: #F5EFE0; border-color: #0F3D2E; }",
+          "#vitrine-cookie-banner .vcb-accept:hover { background: #082619; }",
+          "#vitrine-cookie-banner .vcb-reject { background: transparent; color: #2A2A2A; border-color: #2A2A2A; }",
+          "#vitrine-cookie-banner .vcb-reject:hover { background: #2A2A2A; color: #F5EFE0; }",
+          "@media (max-width: 600px) { #vitrine-cookie-banner { padding: 0.8rem 1rem; flex-direction: column; align-items: stretch; } #vitrine-cookie-banner .vcb-buttons { justify-content: flex-end; } }"
+        ].join(' ');
+        document.head.appendChild(style);
+      }
+
+      function setConsent(value) {
+        try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+      }
+
+      function removeBanner() {
+        var banner = document.getElementById('vitrine-cookie-banner');
+        if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+      }
+
+      function showBanner() {
+        injectStyles();
+
+        var banner = document.createElement('div');
+        banner.id = 'vitrine-cookie-banner';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-label', 'Cookie consent');
+
+        var p = document.createElement('p');
+        p.className = 'vcb-text';
+        var em = document.createElement('em');
+        em.textContent = 'Vitrine uses cookies for analytics';
+        p.appendChild(em);
+        p.appendChild(document.createTextNode(' to understand how the publication is read. No advertising, no profile-building.'));
+        banner.appendChild(p);
+
+        var btns = document.createElement('div');
+        btns.className = 'vcb-buttons';
+
+        var rejectBtn = document.createElement('button');
+        rejectBtn.type = 'button';
+        rejectBtn.className = 'vcb-reject';
+        rejectBtn.textContent = 'Reject';
+        rejectBtn.addEventListener('click', function() {
+          setConsent('rejected');
+          removeBanner();
+        });
+        btns.appendChild(rejectBtn);
+
+        var acceptBtn = document.createElement('button');
+        acceptBtn.type = 'button';
+        acceptBtn.className = 'vcb-accept';
+        acceptBtn.textContent = 'Accept';
+        acceptBtn.addEventListener('click', function() {
+          setConsent('accepted');
+          removeBanner();
+          loadGA4();
+        });
+        btns.appendChild(acceptBtn);
+
+        banner.appendChild(btns);
+        document.body.appendChild(banner);
+      }
+
+      function init() {
+        var consent;
+        try { consent = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+
+        if (consent === 'accepted') {
+          loadGA4();
+          return;
+        }
+        if (consent === 'rejected') {
+          return;
+        }
+        showBanner();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+  <!-- End Vitrine analytics & consent -->
 </head>
 <body>
 
