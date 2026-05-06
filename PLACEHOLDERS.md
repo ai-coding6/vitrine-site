@@ -28,8 +28,6 @@ Tracking unfilled content across the site. Each entry is a `[PLACEHOLDER: …]` 
 ### `/reports/index.html`
 - `reports-index-standfirst` — 1–2 sentence editorial standfirst (~30–40 words).
 - `ilrm-2026-cover-artwork` — replace cover block with real cover art when design pass completes.
-- `ilrm-2026-standfirst` — italic one-line dek (~25 words).
-- `ilrm-2026-summary` — 2–3 sentence summary (~60 words).
 
 ### `/reports/the-indonesian-luxury-retail-map-2026/index.html`
 - `ilrm-2026-cover-artwork` — replace cover block with real cover art.
@@ -52,3 +50,11 @@ Tracking unfilled content across the site. Each entry is a `[PLACEHOLDER: …]` 
 - **`briefing.vitrineasia.com` redirect** — currently `/subscribe/index.html` and other "Already subscribed?" / briefing-archive references link to `https://vitrineasia.substack.com`. When the custom domain is wired (DNS + Substack custom-domain config), update those links to `https://briefing.vitrineasia.com`. Mark: `redirect-target-future`.
 - **AI-bot opt-out headers (GPTBot, anthropic-ai, ClaudeBot, CCBot, …)** — `robots.txt` currently allows all UAs. AI-training opt-out is deferred to the Vercel deploy step where it'll be served as response headers (`X-Robots-Tag`, plus per-bot `User-agent` blocks if added to `robots.txt` later). Decide alongside the rest of the security/policy header set when the deploy config lands.
 - **Per-page OG images** — every page currently uses `/assets/brand/vitrine-wordmark-1024.png` as the OG fallback. Replace with bespoke per-page OG images (1200×630 ideally, since most cards are `summary_large_image`) when the design pass for social cards lands.
+
+---
+
+## Resolved
+
+### `/reports/index.html`
+- `ilrm-2026-standfirst` — italic one-line dek (~25 words). _(resolved 2026-05-06)_
+- `ilrm-2026-summary` — 2–3 sentence summary (~60 words). _(resolved 2026-05-06)_
