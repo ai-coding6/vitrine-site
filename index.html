@@ -111,6 +111,16 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    /* Featured cover — display real cover artwork in the 3:4 frame */
+    .featured__cover { padding: 0; }
+    .featured__cover::before { display: none; }
+    .featured__cover-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 
   <!-- Vitrine — Analytics & cookie consent -->
@@ -285,24 +295,18 @@
   <section class="section">
     <div class="container">
       <div class="featured">
-        <!-- Cover (placeholder, will swap to real artwork) -->
-        <div class="featured__cover" aria-hidden="true">
-          <div class="cover-meta">Vitrine · Volume I</div>
-          <div>
-            <div class="cover-title">The Indonesian Luxury Retail Map</div>
-            <div class="cover-subtitle">A reading of the seven-channel architecture</div>
-          </div>
-          <div class="cover-foot">May 2026 · Jakarta</div>
+        <div class="featured__cover">
+          <img src="/assets/reports/ilrm-2026/cover.jpg" alt="The Indonesian Luxury Retail Map 2026" class="featured__cover-img">
         </div>
 
         <div class="featured__content">
           <p class="section__eyebrow">The inaugural report · May 2026</p>
           <h2>The Indonesian Luxury Retail Map 2026</h2>
           <p class="featured__standfirst">
-            A first published reading of the country's seven-channel luxury retail architecture — the brands, the operators, the property, the movements, the outlook. Free to download.
+            The first published reading of Indonesia's luxury retail market — operator architecture, property landscape, categories, dynamics, and outlook. Volume One.
           </p>
           <div class="cta-row">
-            <a href="/reports/the-indonesian-luxury-retail-map-2026" class="btn">
+            <a href="/reports/the-indonesian-luxury-retail-map-2026/" class="btn">
               Read the report
               <span class="btn__arrow">→</span>
             </a>

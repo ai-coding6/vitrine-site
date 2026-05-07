@@ -102,6 +102,16 @@
         padding: 40px 0;
       }
     }
+
+    /* Featured cover — display real cover artwork in the 3:4 frame */
+    .featured__cover { padding: 0; }
+    .featured__cover::before { display: none; }
+    .featured__cover-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 
   <!-- Vitrine — Analytics & cookie consent -->
@@ -270,24 +280,18 @@
     <div class="container">
       <div class="featured">
 
-        <!-- [PLACEHOLDER: ilrm-2026-cover-artwork] — replace with real cover art when design pass completes -->
-        <div class="featured__cover" aria-hidden="true">
-          <div class="cover-meta">Vitrine · Volume I</div>
-          <div>
-            <div class="cover-title">The Indonesian Luxury Retail Map</div>
-            <div class="cover-subtitle">A reading of the seven-channel architecture</div>
-          </div>
-          <div class="cover-foot">May 2026 · Jakarta</div>
+        <div class="featured__cover">
+          <img src="/assets/reports/ilrm-2026/cover.jpg" alt="The Indonesian Luxury Retail Map 2026" class="featured__cover-img">
         </div>
 
         <div class="featured__content">
           <p class="section__eyebrow">The inaugural report · May 2026</p>
           <h2>The Indonesian Luxury Retail Map 2026</h2>
           <p class="featured__standfirst">
-            A reading of the seven-channel architecture that now defines luxury retail in Indonesia — and what it reveals about who reaches the consumer first.
+            The first published reading of Indonesia's luxury retail market — operator architecture, property landscape, categories, dynamics, and outlook. Volume One.
           </p>
           <p class="featured__summary">
-            A first-principles read of how international luxury currently distributes in Indonesia, structured around the seven channels — and the operators behind each. MAP, Kanmo, Time International, LUXASIA, H&amp;M Group, and the rising direct-retail tier all named, with the mall geography and partnership architecture mapped. For anyone making investment, partnership, or expansion calls into the Indonesian market.
+            Vitrine's inaugural annual report. The Indonesian luxury retail market mapped across seven parts and eleven chapters: the consumer (wealth, geography, offshore split), the property (Big Six malls and the broader listed-property landscape), the operator architecture (direct deployment and the Indonesian intermediated tier), the goods (categories, dominance, what's growing), the dynamics (digital, the gap map), the recent past (2024–26 in review), and the outlook for 2026–27. Approximately 22,000 words. Free to read.
           </p>
           <div class="cta-row">
             <a href="/reports/the-indonesian-luxury-retail-map-2026/" class="btn">
@@ -295,7 +299,7 @@
               <span class="btn__arrow">→</span>
             </a>
           </div>
-          <p class="featured__meta">≈50 pages · Free · PDF · Published May 2026</p>
+          <p class="featured__meta">Long-form web edition · Free · Published May 2026 · Data cutoff 28 April 2026</p>
         </div>
 
       </div>
