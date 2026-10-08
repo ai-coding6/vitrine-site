@@ -44,6 +44,27 @@
   </url>
 
   <url>
+    <loc>https://vitrineasia.com/movements/charlotte-tilbury-plaza-indonesia-flagship</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://vitrineasia.com/movements/mcm-plaza-indonesia-permanent-boutique</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://vitrineasia.com/movements/marimekko-plaza-senayan-first-store</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://vitrineasia.com/movements/cos-plaza-indonesia-first-store</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -82,6 +103,20 @@
     <loc>https://vitrineasia.com/insights</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vitrineasia.com/insights/havaianas-bridge-brand-indonesia</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vitrineasia.com/insights/live-economy-social-commerce-indonesia</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
