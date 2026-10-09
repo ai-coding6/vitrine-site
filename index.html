@@ -407,7 +407,7 @@
             { "proName": "SIX:CFR",      "title": "Richemont" },
             { "proName": "BME:ITX",      "title": "Inditex (Zara)" },
             { "proName": "NYSE:NKE",     "title": "Nike" },
-            { "proName": "NASDAQ:FRCOY", "title": "Fast Retailing (Uniqlo)" },
+            { "proName": "OTC:FRCOY",    "title": "Fast Retailing (Uniqlo)" },
             { "proName": "NASDAQ:AMZN",  "title": "Amazon" },
             { "proName": "NASDAQ:WMT",   "title": "Walmart" },
             { "proName": "NASDAQ:COST",  "title": "Costco" },
@@ -445,7 +445,8 @@
           autoplay muted loop playsinline preload="metadata"
           poster="/assets/video/vitrine-promo-poster.jpg"
           aria-label="Vitrine — a 30-second introduction">
-          <source src="/assets/video/vitrine-promo.mp4" type="video/mp4">
+          <!-- src attached by script on screens >= 768px; phones show the poster only -->
+          <source data-src="/assets/video/vitrine-promo.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -738,6 +739,25 @@
   </footer>
 
   <script src="/assets/subscribe.js" defer></script>
+  <script>
+    (function () {
+      var video = document.querySelector('.hero__video');
+      if (!video) return;
+      var wide = window.matchMedia('(min-width: 768px)');
+      function attach() {
+        if (!wide.matches || video.dataset.loaded) return;
+        var source = video.querySelector('source[data-src]');
+        source.src = source.dataset.src;
+        video.dataset.loaded = 'true';
+        video.load();
+        var playing = video.play();
+        if (playing && playing.catch) playing.catch(function () {});
+      }
+      attach();
+      if (wide.addEventListener) wide.addEventListener('change', attach);
+      else if (wide.addListener) wide.addListener(attach);
+    })();
+  </script>
   <script>
     (function () {
       var el = document.getElementById('masthead-month-year');
