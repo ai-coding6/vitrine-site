@@ -121,6 +121,59 @@
       height: 100%;
       object-fit: cover;
     }
+
+    /* VITRINE MARKET WATCH — ticker */
+    .vitrine-ticker {
+      background: var(--emerald);
+      border-bottom: 1px solid rgba(176, 138, 58, .45);
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 0 24px;
+      min-height: 48px;
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .vitrine-ticker__label {
+      flex: 0 0 auto;
+      font-family: var(--ui);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--brass);
+      white-space: nowrap;
+      padding-right: 22px;
+      border-right: 1px solid rgba(245, 239, 224, .14);
+    }
+    .vitrine-ticker__feed { flex: 1 1 auto; min-width: 0; }
+    .vitrine-ticker__feed .tradingview-widget-container { margin: 0; }
+    .vitrine-ticker-note {
+      margin: 0;
+      padding: 6px 24px;
+      text-align: right;
+      font-family: var(--ui);
+      font-size: 10px;
+      letter-spacing: .4px;
+      color: var(--ink-soft);
+    }
+    @media (max-width: 760px) {
+      .vitrine-ticker { gap: 0; padding: 0 10px; }
+      .vitrine-ticker__label { display: none; }
+      .vitrine-ticker-note { padding: 6px 10px; text-align: left; }
+    }
+
+    /* second (global) band variant — deeper tone so the two read as a pair */
+    .vitrine-ticker--global {
+      background: #0A2A1F;
+      border-bottom: 1px solid rgba(176, 138, 58, .30);
+    }
+    .vitrine-ticker--global .vitrine-ticker__label {
+      color: #C9A96A;
+      border-right-color: rgba(92, 30, 30, .45);
+    }
   </style>
 
   <!-- Vitrine — Analytics & cookie consent -->
@@ -269,6 +322,71 @@
       </nav>
     </div>
   </header>
+
+  <!-- VITRINE MARKET WATCH — Retail & Luxury ticker (TradingView) -->
+  <section class="vitrine-ticker" aria-label="Retail and luxury market watch">
+    <span class="vitrine-ticker__label">INDONESIA · RETAIL &amp; LUXURY</span>
+    <div class="vitrine-ticker__feed">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+          "symbols": [
+            { "proName": "IDX:MAPI",     "title": "Mitra Adiperkasa" },
+            { "proName": "IDX:MAPA",     "title": "MAP Active" },
+            { "proName": "IDX:BABY",     "title": "Multitrend (Kanmo)" },
+            { "proName": "IDX:ERAA",     "title": "Erajaya" },
+            { "proName": "IDX:ACES",     "title": "Ace Hardware ID" },
+            { "proName": "IDX:LPPF",     "title": "Matahari Dept Store" },
+            { "proName": "IDX:GOTO",     "title": "GoTo (Tokopedia)" },
+            { "proName": "IDX:BELI",     "title": "Blibli" },
+            { "proName": "EURONEXT:MC",  "title": "LVMH" },
+            { "proName": "SIX:CFR",      "title": "Richemont" },
+            { "proName": "EURONEXT:KER", "title": "Kering" }
+          ],
+          "showSymbolLogo": true,
+          "isTransparent": true,
+          "displayMode": "regular",
+          "colorTheme": "dark",
+          "locale": "en"
+        }
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- VITRINE GLOBAL WATCH — Global Retail & Luxury ticker (TradingView) -->
+  <section class="vitrine-ticker vitrine-ticker--global" aria-label="Global retail and luxury market watch">
+    <span class="vitrine-ticker__label">GLOBAL RETAIL &amp; LUXURY</span>
+    <div class="vitrine-ticker__feed">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+          "symbols": [
+            { "proName": "EURONEXT:MC",  "title": "LVMH" },
+            { "proName": "EURONEXT:RMS", "title": "Herm\u00e8s" },
+            { "proName": "EURONEXT:KER", "title": "Kering" },
+            { "proName": "SIX:CFR",      "title": "Richemont" },
+            { "proName": "BME:ITX",      "title": "Inditex (Zara)" },
+            { "proName": "NYSE:NKE",     "title": "Nike" },
+            { "proName": "NASDAQ:FRCOY", "title": "Fast Retailing (Uniqlo)" },
+            { "proName": "NASDAQ:AMZN",  "title": "Amazon" },
+            { "proName": "NASDAQ:WMT",   "title": "Walmart" },
+            { "proName": "NASDAQ:COST",  "title": "Costco" },
+            { "proName": "NYSE:BABA",    "title": "Alibaba" }
+          ],
+          "showSymbolLogo": true,
+          "isTransparent": true,
+          "displayMode": "regular",
+          "colorTheme": "dark",
+          "locale": "en"
+        }
+        </script>
+      </div>
+    </div>
+  </section>
+  <p class="vitrine-ticker-note">Market data delayed · for context, not investment advice · via TradingView</p>
 
   <!-- ============================================
        HERO
@@ -566,6 +684,7 @@
     <div class="footer__bottom">
       <span>© 2026 Vitrine. All rights reserved.</span>
       <span>Independent · Sourced · Indonesian</span>
+      <span>Market data on this site is delayed and provided for context only, not investment advice. Charts &amp; data via TradingView.</span>
     </div>
   </footer>
 
