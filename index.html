@@ -39,7 +39,7 @@
   <style>
     /* Page-specific: homepage hero + entrance animation */
     .hero {
-      padding: clamp(80px, 12vw, 160px) 0 clamp(96px, 14vw, 180px);
+      padding: clamp(56px, 6vw, 80px) 0 var(--section-y);
       position: relative;
     }
 
@@ -298,7 +298,7 @@
        ============================================ -->
   <div class="edition-strip" aria-hidden="true">
     <div class="edition-strip__inner">
-      <span>Edition I · May 2026</span>
+      <span class="masthead__date">Edition I · <span id="masthead-month-year">October 2026</span></span>
       <span>Independent · Sourced · Indonesian</span>
       <span>Jakarta</span>
     </div>
@@ -689,5 +689,14 @@
   </footer>
 
   <script src="/assets/subscribe.js" defer></script>
+  <script>
+    (function () {
+      var el = document.getElementById('masthead-month-year');
+      if (el) {
+        var now = new Date();
+        el.textContent = now.toLocaleString('en-US', { month: 'long', year: 'numeric' }).toUpperCase();
+      }
+    })();
+  </script>
 </body>
 </html>
