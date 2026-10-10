@@ -169,4 +169,18 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://vitrineasia.com/advisory</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vitrineasia.com/advisory/tendam-indonesia-roadmap</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
